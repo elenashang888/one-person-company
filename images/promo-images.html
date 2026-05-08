@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小红书推广图片生成器</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .image-card {
+            width: 900px;
+            height: 1200px;
+            margin: 20px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        /* 封面图1：数字冲击型 */
+        .cover-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .cover-1 .title {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .cover-1 .subtitle {
+            font-size: 48px;
+            opacity: 0.95;
+            margin-bottom: 80px;
+        }
+        
+        .cover-1 .price-box {
+            background: #ff6b6b;
+            padding: 40px 80px;
+            border-radius: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .cover-1 .price {
+            font-size: 96px;
+            font-weight: 700;
+        }
+        
+        .cover-1 .original-price {
+            font-size: 36px;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+        
+        .cover-1 .limit {
+            font-size: 40px;
+            font-weight: 600;
+        }
+        
+        /* 封面图2：故事型 */
+        .cover-2 {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .cover-2 .title {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .cover-2 .method-box {
+            background: rgba(255,255,255,0.95);
+            padding: 50px;
+            border-radius: 30px;
+            width: 80%;
+            margin-bottom: 40px;
+        }
+        
+        .cover-2 .method-title {
+            color: #333;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .cover-2 .method-list {
+            color: #666;
+            font-size: 32px;
+            line-height: 1.8;
+            text-align: left;
+        }
+        
+        .cover-2 .income-box {
+            background: #10b981;
+            padding: 40px 100px;
+            border-radius: 30px;
+        }
+        
+        .cover-2 .income {
+            font-size: 72px;
+            font-weight: 700;
+        }
+        
+        /* 封面图3：紧迫感型 */
+        .cover-3 {
+            background: linear-gradient(135deg, #dc2626 0%, #ff6b6b 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .cover-3 .urgent {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        
+        .cover-3 .title {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+        
+        .cover-3 .count-box {
+            background: white;
+            padding: 60px 120px;
+            border-radius: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .cover-3 .count {
+            font-size: 180px;
+            font-weight: 700;
+            color: #ff6b6b;
+            line-height: 1;
+        }
+        
+        .cover-3 .count-label {
+            font-size: 36px;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        .cover-3 .price-alert {
+            background: rgba(0,0,0,0.3);
+            padding: 30px 60px;
+            border-radius: 20px;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        
+        .cover-3 .action {
+            font-size: 44px;
+            font-weight: 600;
+        }
+        
+        /* 朋友圈图片 */
+        .wechat-moment {
+            width: 900px;
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            margin: 20px auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .wechat-moment .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .wechat-moment .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            margin-right: 30px;
+        }
+        
+        .wechat-moment .user-info h3 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .wechat-moment .user-info p {
+            font-size: 28px;
+            color: #999;
+        }
+        
+        .wechat-moment .content {
+            font-size: 32px;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .wechat-moment .highlight-box {
+            background: linear-gradient(135deg, #f0f4ff, #e8edff);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .wechat-moment .highlight-title {
+            font-size: 36px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .wechat-moment .price-tag {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 48px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .wechat-moment .qr-placeholder {
+            width: 300px;
+            height: 300px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 28px;
+            margin: 30px auto;
+        }
+        
+        /* 案例卡片 */
+        .case-card-img {
+            width: 900px;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 20px auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .case-card-img .case-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .case-card-img .case-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            margin-right: 30px;
+        }
+        
+        .case-card-img .case-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .case-card-img .case-tags {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .case-card-img .tag {
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 28px;
+        }
+        
+        .case-card-img .tag-blue {
+            background: #f0f4ff;
+            color: #667eea;
+        }
+        
+        .case-card-img .tag-green {
+            background: #d1fae5;
+            color: #059669;
+        }
+        
+        .case-card-img .story-box {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .case-card-img .story-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .case-card-img .story-content {
+            font-size: 30px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .case-card-img .income-highlight {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .case-card-img .income-label {
+            font-size: 28px;
+            color: #065f46;
+            margin-bottom: 15px;
+        }
+        
+        .case-card-img .income-value {
+            font-size: 56px;
+            font-weight: 700;
+            color: #047857;
+        }
+        
+        .instructions {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 900px;
+        }
+        
+        .instructions h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .instructions ol {
+            font-size: 28px;
+            color: #555;
+            line-height: 2;
+            padding-left: 40px;
+        }
+        
+        .instructions li {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #333;">🎨 小红书推广图片</h1>
+        <p style="text-align: center; font-size: 24px; color: #666; margin-bottom: 40px;">请使用浏览器截图功能保存以下图片（尺寸：900x1200）</p>
+        
+        <!-- 封面图1：数字冲击型 -->
+        <div class="image-card cover-1">
+            <div class="title">我花了3个月<br>研究了31个<br>AI赚钱案例</div>
+            <div class="subtitle">现在1元分享</div>
+            <div class="price-box">
+                <div class="price">早鸟价 ¥1</div>
+                <div class="original-price">原价 ¥299</div>
+            </div>
+            <div class="limit">限前100名</div>
+        </div>
+        
+        <!-- 封面图2：故事型 -->
+        <div class="image-card cover-2">
+            <div class="title">95后设计师<br>用AI做头像<br>月入1.2万</div>
+            <div class="method-box">
+                <div class="method-title">方法全在这里</div>
+                <div class="method-list">
+                    ✓ Midjourney做头像<br>
+                    ✓ 小红书引流<br>
+                    ✓ 微信接单<br>
+                    ✓ 10分钟出图
+                </div>
+            </div>
+            <div class="income-box">
+                <div class="income">💰 月入 1.2万</div>
+            </div>
+        </div>
+        
+        <!-- 封面图3：紧迫感型 -->
+        <div class="image-card cover-3">
+            <div class="urgent">⏰ 最后33个名额！</div>
+            <div class="title">¥1学31个AI赚钱案例</div>
+            <div class="count-box">
+                <div class="count">33</div>
+                <div class="count-label">剩余名额</div>
+            </div>
+            <div class="price-alert">100名后涨价到 ¥299</div>
+            <div class="action">手慢无！立即扫码抢购</div>
+        </div>
+        
+        <h1 style="text-align: center; font-size: 48px; margin: 80px 0 40px; color: #333;">📱 朋友圈推广图片</h1>
+        
+        <!-- 朋友圈图1 -->
+        <div class="wechat-moment">
+            <div class="header">
+                <div class="avatar">💼</div>
+                <div class="user-info">
+                    <h3>七公主</h3>
+                    <p>刚刚</p>
+                </div>
+            </div>
+            <div class="content">
+                🎉 我的新项目上线了！<br><br>
+                《一人公司指南》<br>
+                31个真实AI赚钱案例<br>
+                手把手教你月入过万<br><br>
+                早鸟价仅需¥1（原价¥299）<br>
+                限前100名
+            </div>
+            <div class="highlight-box">
+                <div class="highlight-title">每个案例都包含：</div>
+                <div style="font-size: 30px; color: #555; line-height: 1.8;">
+                    ✅ 真实故事<br>
+                    ✅ 详细操作步骤<br>
+                    ✅ 收入数据<br>
+                    ✅ Prompt模板
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <div class="price-tag">¥1</div>
+            </div>
+            <div class="qr-placeholder">
+                [微信收款码]
+            </div>
+            <div style="text-align: center; font-size: 28px; color: #999;">
+                扫码支付¥1，备注邮箱<br>
+                立即发送完整资料
+            </div>
+        </div>
+        
+        <h1 style="text-align: center; font-size: 48px; margin: 80px 0 40px; color: #333;">📊 案例卡片</h1>
+        
+        <!-- 案例卡片1 -->
+        <div class="case-card-img">
+            <div class="case-header">
+                <div class="case-number">1</div>
+                <div class="case-title">AI头像定制服务</div>
+            </div>
+            <div class="case-tags">
+                <span class="tag tag-blue">内容创作</span>
+                <span class="tag tag-green">⭐⭐ 难度</span>
+            </div>
+            <div class="story-box">
+                <div class="story-title">📖 真实故事</div>
+                <div class="story-content">
+                    95后设计师小王，用Midjourney做头像定制，小红书引流，私域成交。专做"迪士尼公主风"，10分钟出图，月入¥12,000。
+                </div>
+            </div>
+            <div class="income-highlight">
+                <div class="income-label">月收入潜力</div>
+                <div class="income-value">¥5,000 - ¥20,000</div>
+            </div>
+        </div>
+        
+        <!-- 案例卡片2 -->
+        <div class="case-card-img">
+            <div class="case-header">
+                <div class="case-number">2</div>
+                <div class="case-title">AI简历优化服务</div>
+            </div>
+            <div class="case-tags">
+                <span class="tag tag-blue">专业服务</span>
+                <span class="tag tag-green">⭐⭐ 难度</span>
+            </div>
+            <div class="story-box">
+                <div class="story-title">📖 真实故事</div>
+                <div class="story-content">
+                    HR小陈用ChatGPT帮求职者优化简历，BOSS直聘接单。免费诊断→简历优化→面试辅导，月入¥22,500。
+                </div>
+            </div>
+            <div class="income-highlight">
+                <div class="income-label">月收入潜力</div>
+                <div class="income-value">¥15,000 - ¥22,500</div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>📸 截图保存说明</h2>
+            <ol>
+                <li>在电脑上打开此页面，按 F11 进入全屏模式</li>
+                <li>使用浏览器截图工具（Chrome: Ctrl+Shift+S / Mac: Cmd+Shift+4）</li>
+                <li>或使用系统截图工具截取每张图片</li>
+                <li>确保截图尺寸为 900x1200 像素（小红书标准尺寸）</li>
+                <li>保存为 PNG 格式，保持高清</li>
+                <li>上传到小红书、朋友圈使用</li>
+            </ol>
+            <p style="margin-top: 30px; font-size: 24px; color: #999;">
+                💡 提示：你也可以使用浏览器开发者工具，调整窗口大小为 900x1200，然后截图
+            </p>
+        </div>
+    </div>
+</body>
+</html>
