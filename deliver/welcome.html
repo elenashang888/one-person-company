@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 欢迎加入一人公司指南 - 你的AI赚钱之旅开始了</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7f6f3;
+            --bg-tertiary: #f1f1ef;
+            --text-primary: #37352f;
+            --text-secondary: #6b6b6b;
+            --text-tertiary: #9ca3af;
+            --accent: #667eea;
+            --accent-light: #f0f4ff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border: #e3e2e0;
+            --shadow: rgba(0,0,0,0.08);
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        /* Success Banner */
+        .success-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 1s ease infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .success-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .success-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px var(--shadow);
+            border: 1px solid var(--border);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .card-icon.blue { background: var(--accent-light); }
+        .card-icon.green { background: #d1fae5; }
+        .card-icon.yellow { background: #fef3c7; }
+        .card-icon.purple { background: #f3e8ff; }
+        
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .card-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .action-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+        
+        .action-btn.primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        
+        .action-btn.primary:hover {
+            background: #5a6fd6;
+        }
+        
+        .action-icon {
+            font-size: 1.5rem;
+        }
+        
+        .action-text {
+            font-weight: 600;
+        }
+        
+        .action-desc {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-top: 2px;
+        }
+        
+        /* Steps */
+        .steps {
+            counter-reset: step;
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step-time {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            background: var(--bg-tertiary);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        
+        .step-desc {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        
+        .step-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        
+        .step-action:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Resources Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .resource-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        
+        .resource-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .resource-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .resource-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .checkbox:hover {
+            border-color: var(--accent);
+        }
+        
+        .checkbox.checked {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+        
+        .checklist-text {
+            flex: 1;
+        }
+        
+        .checklist-title {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .checklist-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Bonus Box */
+        .bonus-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .bonus-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #92400e;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .bonus-list {
+            list-style: none;
+        }
+        
+        .bonus-list li {
+            padding: 8px 0;
+            color: #78350f;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .bonus-list li:before {
+            content: "🎁";
+        }
+        
+        /* Community CTA */
+        .community-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        
+        .community-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .community-desc {
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+        
+        .community-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: white;
+            color: var(--accent);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .community-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Progress Bar */
+        .progress-section {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .progress-title {
+            font-weight: 600;
+        }
+        
+        .progress-value {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: var(--bg-tertiary);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #764ba2);
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .success-title { font-size: 1.5rem; }
+            .card { padding: 20px; }
+            .quick-actions { grid-template-columns: 1fr; }
+            .step { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Success Banner -->
+    <div class="success-banner">
+        <div class="success-icon">🎉</div>
+        <h1 class="success-title">支付成功！欢迎加入</h1>
+        <p class="success-subtitle">你已成功购买《一人公司指南》，你的AI赚钱之旅开始了</p>
+    </div>
+    
+    <div class="container">
+        <!-- Quick Actions -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon blue">⚡</div>
+                <div>
+                    <div class="card-title">立即开始</div>
+                    <div class="card-subtitle">选择你想要先获取的资源</div>
+                </div>
+            </div>
+            
+            <div class="quick-actions">
+                <a href="https://elenashang888.github.io/one-person-company/docs/" class="action-btn primary">
+                    <span class="action-icon">📚</span>
+                    <div>
+                        <div class="action-text">阅读完整案例库</div>
+                        <div class="action-desc" style="color: rgba(255,255,255,0.8);">31个详细案例，立即访问</div>
+                    </div>
+                </a>
+                <a href="#checklist" class="action-btn">
+                    <span class="action-icon">✅</span>
+                    <div>
+                        <div class="action-text">查看行动清单</div>
+                        <div class="action-desc">7天快速启动指南</div>
+                    </div>
+                </a>
+                <a href="#community" class="action-btn">
+                    <span class="action-icon">👥</span>
+                    <div>
+                        <div class="action-text">加入社群</div>
+                        <div class="action-desc">500+同频伙伴</div>
+                    </div>
+                </a>
+                <a href="#bonuses" class="action-btn">
+                    <span class="action-icon">🎁</span>
+                    <div>
+                        <div class="action-text">领取 bonuses</div>
+                        <div class="action-desc">价值¥999的额外资源</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Progress -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <span class="progress-title">📊 你的学习进度</span>
+                <span class="progress-value">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 5%;"></div>
+            </div>
+            <p style="margin-top: 12px; color: var(--text-secondary); font-size: 0.95rem;">
+                完成下方清单，7天内获得第一笔收入
+            </p>
+        </div>
+        
+        <!-- 7-Day Roadmap -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon green">🗺️</div>
+                <div>
+                    <div class="card-title">7天快速启动路线图</div>
+                    <div class="card-subtitle">跟着做，一周内获得第一笔收入</div>
+                </div>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">
+                            选择你的第一个案例
+                            <span class="step-time">⏱️ 今天</span>
+                        </div>
+                        <p class="step-desc">
+                            浏览31个案例，根据你的技能和时间，选择1-3个感兴趣的案例。建议新手从「AI头像定制」或「AI简历优化」开始。
+                        </p>
+                        <a href="https://elenashang888.github.io/one-person-company/docs/" class="step-action">
+                            浏览案例库 →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">
+                            准备工具和账号
+                            <span class="step-time">⏱️ 今天</span>
+                        </div>
+                        <p class="step-desc">
+                            根据选择的案例，准备必要的工具。大部分案例只需要ChatGPT Plus（$20/月）或免费工具即可开始。
+                        </p>
+                        <a href="#tools" class="step-action">
+                            查看工具清单 →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">
+                            完成第一个作品/服务
+                            <span class="step-time">⏱️ 第2-3天</span>
+                        </div>
+                        <p class="step-desc">
+                            按照案例中的操作步骤，完成你的第一个作品（如头像、简历）或准备好服务介绍。这是你展示给客户的样品。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">
+                            搭建获客渠道
+                            <span class="step-time">⏱️ 第3-4天</span>
+                        </div>
+                        <p class="step-desc">
+                            注册小红书/BOSS直聘/Upwork等平台账号，完善个人资料，发布第一条内容或服务信息。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <div class="step-title">
+                            获得第一个咨询/订单
+                            <span class="step-time">⏱️ 第5-7天</span>
+                        </div>
+                        <p class="step-desc">
+                            主动联系潜在客户，或在平台等待咨询。目标是获得第一个付费客户，哪怕价格低点也没关系，关键是验证模式。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <div class="step-title">
+                            交付并获取反馈
+                            <span class="step-time">⏱️ 第7天</span>
+                        </div>
+                        <p class="step-desc">
+                            完成第一单交付，请求客户留评价。根据反馈优化你的服务流程。恭喜你，你已经跑通了第一个AI赚钱项目！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Checklist -->
+        <div class="card" id="checklist">
+            <div class="card-header">
+                <div class="card-icon yellow">✅</div>
+                <div>
+                    <div class="card-title">今日行动清单</div>
+                    <div class="card-subtitle">完成这些，今天就迈出第一步</div>
+                </div>
+            </div>
+            
+            <ul class="checklist">
+                <li class="checklist-item">
+                    <div class="checkbox" onclick="this.classList.toggle('checked')">✓</div>
+                    <div class="checklist-text">
+                        <div class="checklist-title">加入专属社群</div>
+                        <div class="checklist-desc">扫码加入微信群，和同频伙伴交流，获取最新机会</div>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox" onclick="this.classList.toggle('checked')">✓</div>
+                    <div class="checklist-text">
+                        <div class="checklist-title">阅读案例库，选择1-3个感兴趣的方向</div>
+                        <div class="checklist-desc">建议新手从案例1或案例2开始</div>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox" onclick="this.classList.toggle('checked')">✓</div>
+                    <div class="checklist-text">
+                        <div class="checklist-title">注册必要的AI工具账号</div>
+                        <div class="checklist-desc">ChatGPT、Midjourney等（大部分有免费额度）</div>
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checkbox" onclick="this.classList.toggle('checked')">✓</div>
+                    <div class="checklist-text">
+                        <div class="checklist-title">在社群分享你的选择</div>
+                        <div class="checklist-desc">告诉大家你打算做哪个案例，获得反馈和建议</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Bonuses -->
+        <div class="bonus-box" id="bonuses">
+            <div class="bonus-title">🎁 你的专属 Bonus 礼包</div>
+            <p style="color: #78350f; margin-bottom: 16px;">除了31个详细案例，你还获得了以下额外资源（总价值¥999）：</p>
+            <ul class="bonus-list">
+                <li><strong>《AI工具大全》</strong> - 50+个AI工具分类整理，附使用场景和定价</li>
+                <li><strong>《Prompt工程指南》</strong> - 100+个经过验证的Prompt模板，直接复制使用</li>
+                <li><strong>《小红书爆款文案模板》</strong> - 20个高转化文案模板，拿来就用</li>
+                <li><strong>《定价策略手册》</strong> - 如何定价才能利润最大化</li>
+                <li><strong>《客户沟通话术库》</strong> - 从获客到成交的完整话术</li>
+                <li><strong>《一人公司财税指南》</strong> - 个人收款、报税、合规操作指南</li>
+            </ul>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="#" class="step-action" style="background: #f59e0b; color: white;">
+                    下载所有 Bonus 资源 →
+                </a>
+            </div>
+        </div>
+        
+        <!-- Resources -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon purple">📦</div>
+                <div>
+                    <div class="card-title">你的资源库</div>
+                    <div class="card-subtitle">所有资料都在这里，随时访问</div>
+                </div>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <div class="resource-icon">📚</div>
+                    <div>
+                        <div class="resource-title">完整案例库</div>
+                        <div class="resource-desc">31个详细案例，在线阅读</div>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">💬</div>
+                    <div>
+                        <div class="resource-title">Prompt模板库</div>
+                        <div class="resource-desc">100+可直接使用的Prompt</div>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">🛠️</div>
+                    <div>
+                        <div class="resource-title">工具推荐清单</div>
+                        <div class="resource-desc">50+ AI工具分类整理</div>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">📊</div>
+                    <div>
+                        <div class="resource-title">收入追踪表</div>
+                        <div class="resource-desc">记录你的AI收入 journey</div>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">📝</div>
+                    <div>
+                        <div class="resource-title">文案模板</div>
+                        <div class="resource-desc">小红书/朋友圈/私信模板</div>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">🎥</div>
+                    <div>
+                        <div class="resource-title">视频教程</div>
+                        <div class="resource-desc">部分案例有视频演示</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Community CTA -->
+        <div class="community-cta" id="community">
+            <div class="community-title">👥 加入「一人公司」社群</div>
+            <p class="community-desc">
+                500+同频伙伴在这里交流AI赚钱经验<br>
+                每日分享最新机会、解答问题、互相鼓励
+            </p>
+            <a href="#" class="community-btn">
+                <span>扫码加入微信群</span>
+                <span>→</span>
+            </a>
+            <p style="margin-top: 16px; opacity: 0.9; font-size: 0.9rem;">
+                入群暗号：一人公司2026
+            </p>
+        </div>
+        
+        <!-- Support -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon blue">💬</div>
+                <div>
+                    <div class="card-title">需要帮助？</div>
+                    <div class="card-subtitle">我们随时为你解答</div>
+                </div>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <div class="resource-icon">📧</div>
+                    <div>
+                        <div class="resource-title">邮件支持</div>
+                        <div class="resource-desc">support@oneperson.company<br>24小时内回复</div>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">💬</div>
+                    <div>
+                        <div class="resource-title">社群问答</div>
+                        <div class="resource-desc">在微信群提问<br>伙伴和导师解答</div>
+                    </div>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">📅</div>
+                    <div>
+                        <div class="resource-title">1对1咨询</div>
+                        <div class="resource-desc">预约导师时间<br>针对性解决问题</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 一人公司指南 | 用AI打造个人赚钱系统</p>
+            <p style="margin-top: 8px;">
+                <a href="#">查看订单</a> · 
+                <a href="#">申请退款</a> · 
+                <a href="#">隐私政策</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Checkbox toggle
+        document.querySelectorAll('.checkbox').forEach(checkbox => {
+            checkbox.addEventListener('click', function() {
+                this.classList.toggle('checked');
+                updateProgress();
+            });
+        });
+        
+        // Update progress
+        function updateProgress() {
+            const total = document.querySelectorAll('.checkbox').length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            document.querySelector('.progress-value').textContent = percentage + '%';
+            document.querySelector('.progress-fill').style.width = percentage + '%';
+        }
+    </script>
+</body>
+</html>
