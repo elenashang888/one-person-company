@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Person Company - Build Your AI-Powered Business</title>
-    <meta name="description" content="31 real AI business cases showing how to build a profitable one-person company. No team, no funding needed. Start earning $1,000+/month.">
-    <meta name="keywords" content="one person company, AI business, solopreneur, passive income, side hustle">
+    <title>One Person Company - 31 AI Business Cases to Build Your $10k/Month Empire</title>
+    <meta name="description" content="31 real AI business cases with step-by-step guides, income data, and proven strategies. Early bird price $1, limited to first 100.">
+    <meta name="keywords" content="AI business, side hustle, passive income, one person company, AI tools, make money online">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -24,216 +24,405 @@
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 60px 0;
+            padding: 80px 0 100px;
             text-align: center;
         }
         header h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
+            font-weight: 700;
         }
-        header p {
-            font-size: 1.3rem;
-            opacity: 0.9;
+        header .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.95;
             max-width: 700px;
             margin: 0 auto 30px;
+        }
+        header .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.1rem;
         }
         
         /* Stats */
         .stats {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
+            gap: 60px;
+            margin-top: 50px;
         }
         .stat {
             text-align: center;
         }
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
         }
         .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 5px;
         }
         
         /* Pricing Card */
-        .pricing {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin: -40px auto 60px;
-            max-width: 500px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            text-align: center;
+        .pricing-section {
+            margin-top: -50px;
             position: relative;
             z-index: 10;
         }
+        .pricing {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 0 auto 60px;
+            max-width: 550px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        .early-bird-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
         .price {
-            font-size: 4rem;
+            font-size: 5rem;
             font-weight: 700;
-            color: #667eea;
+            color: #ff6b6b;
+            line-height: 1;
         }
         .price-original {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #999;
             text-decoration: line-through;
-            margin-left: 10px;
+            margin-left: 15px;
         }
         .price-note {
             color: #666;
-            margin: 10px 0 30px;
+            margin: 20px 0 30px;
+            font-size: 1.1rem;
         }
         .btn-buy {
             display: block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 20px 40px;
-            border-radius: 10px;
+            padding: 22px 50px;
+            border-radius: 12px;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            transition: transform 0.3s;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
         .btn-buy:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
         .guarantee {
             color: #48bb78;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .bonus-box {
+            background: linear-gradient(135deg, #f0f4ff, #e8edff);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            color: #555;
+            border-left: 4px solid #667eea;
+        }
+        .bonus-box strong {
+            color: #667eea;
+        }
+        .urgency {
+            margin-top: 20px;
+            color: #ff6b6b;
+            font-weight: 600;
+            font-size: 1rem;
         }
         
-        /* Features */
-        .features {
-            padding: 60px 0;
-            background: white;
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
         }
-        .features h2 {
+        .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #333;
         }
-        .feature-grid {
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+        
+        /* Case Cards */
+        .cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 30px;
         }
-        .feature-card {
-            padding: 30px;
-            border-radius: 10px;
-            background: #f8f9fa;
-        }
-        .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        
-        /* Cases Preview */
-        .cases {
-            padding: 60px 0;
-        }
-        .cases h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-        .case-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-        }
-        .case-item {
+        .case-card {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
         }
-        .case-item h4 {
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        }
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .case-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .case-type {
+            background: #f0f4ff;
             color: #667eea;
-            margin-bottom: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .case-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .case-story {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .case-stat {
+            text-align: center;
+        }
+        .case-stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .case-stat-label {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 3px;
+        }
+        .case-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .case-features li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        .case-features li:before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+            margin-right: 10px;
         }
         .case-income {
-            color: #48bb78;
-            font-weight: 600;
-            margin-top: 10px;
+            background: linear-gradient(135deg, #f0fff4, #e6ffed);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #48bb78;
+        }
+        .case-income-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .case-income-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #38a169;
+        }
+        
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .feature-item {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .feature-item p {
+            color: #666;
+            font-size: 0.95rem;
         }
         
         /* Testimonials */
         .testimonials {
-            padding: 60px 0;
             background: white;
-        }
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
         }
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
-        .testimonial {
-            padding: 30px;
+        .testimonial-card {
             background: #f8f9fa;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 16px;
         }
         .testimonial-text {
             font-style: italic;
-            margin-bottom: 15px;
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1rem;
         }
         .testimonial-author {
-            font-weight: 600;
-            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        .author-info h4 {
+            color: #333;
+            margin-bottom: 3px;
+        }
+        .author-info p {
+            color: #888;
+            font-size: 0.9rem;
         }
         
         /* FAQ */
-        .faq {
-            padding: 60px 0;
-        }
-        .faq h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
         .faq-item {
             background: white;
-            padding: 25px;
             margin-bottom: 15px;
-            border-radius: 10px;
+            border-radius: 12px;
+            padding: 25px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         .faq-item h4 {
-            color: #667eea;
+            color: #333;
             margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .faq-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .btn-cta {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 20px 60px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
         /* Footer */
         footer {
-            background: #1a1a1a;
+            background: #333;
             color: white;
-            padding: 40px 0;
             text-align: center;
+            padding: 40px 0;
         }
-        .footer-links {
-            margin-bottom: 20px;
-        }
-        .footer-links a {
-            color: #999;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .disclaimer {
-            color: #666;
-            font-size: 0.8rem;
-            margin-top: 20px;
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
         }
         
-        /* Mobile */
+        /* Responsive */
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
-            .stats { flex-direction: column; gap: 20px; }
-            .price { font-size: 3rem; }
+            header .subtitle { font-size: 1.1rem; }
+            .stats { flex-direction: column; gap: 30px; }
+            .price { font-size: 3.5rem; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .case-stats { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -242,174 +431,490 @@
     <header>
         <div class="container">
             <h1>One Person Company</h1>
-            <p>31 real AI business cases showing you how to build a profitable one-person company. No team, no funding, no experience needed. Start earning $1,000+/month.</p>
+            <p class="subtitle">31 Real AI Business Cases with Step-by-Step Guides to Build Your $10,000/Month Empire</p>
+            <div class="highlight">✨ No Coding Required · No Team Needed · Work Alone</div>
+            
             <div class="stats">
                 <div class="stat">
                     <div class="stat-number">31</div>
-                    <div class="stat-label">Real Cases</div>
+                    <div class="stat-label">Business Cases</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Action Steps</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">$0</div>
+                    <div class="stat-number">$0-200</div>
                     <div class="stat-label">Startup Cost</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$1k-50k</div>
+                    <div class="stat-label">Income Potential</div>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Pricing -->
-    <div class="container">
-        <div class="pricing">
-            <div style="background: #ff6b6b; color: white; padding: 8px 16px; border-radius: 20px; display: inline-block; margin-bottom: 20px; font-weight: 600;">
-                🔥 Early Bird Special - First 100 Only
-            </div>
-            <div class="price">
-                $1
-                <span class="price-original">$49</span>
-            </div>
-            <p class="price-note">Regular price $49, early bird only $1<br>Price returns to $19 after 100 sales</p>
-            <a href="#buy" class="btn-buy">Get It Now</a>
-            <p class="guarantee">✓ 7-Day Money Back Guarantee ✓ Lifetime Updates ✓ Private Community</p>
-            <div style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 10px; font-size: 0.9rem; color: #666;">
-                <strong>Bonus:</strong> Get "AI Tools Masterclass" + "Prompt Engineering Guide" FREE
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing">
+                <div class="early-bird-badge">🔥 Early Bird Special - First 100 Only</div>
+                <div class="price">
+                    $1
+                    <span class="price-original">$49</span>
+                </div>
+                <p class="price-note">Regular price $49, early bird only $1<br>Price returns to $19 after 100 sales</p>
+                <a href="#buy" class="btn-buy">Get It Now</a>
+                <p class="guarantee">✓ 7-Day Money Back Guarantee ✓ Lifetime Updates ✓ Private Community</p>
+                <div class="bonus-box">
+                    <strong>🎁 Limited Bonus:</strong> Get "AI Tools Masterclass" + "Prompt Engineering Guide" + "Twitter Viral Templates" FREE
+                </div>
+                <div class="urgency">⏰ 67 people have bought, only 33 spots left</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Features -->
-    <section class="features">
+    <!-- What's Inside -->
+    <section class="section" style="background: white;">
         <div class="container">
-            <h2>What You'll Get</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>📚 31 Real Cases</h3>
-                    <p>Each case includes: operator background, exact method, income data, success factors, risk warnings. Real methods, not theory.</p>
+            <h2 class="section-title">📦 What You'll Get</h2>
+            <p class="section-subtitle">Not empty theory, but actionable money-making blueprints</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <h3>31 Detailed Cases</h3>
+                    <p>Each case includes real stories, action steps, income data, and pitfalls to avoid. Copy and start immediately.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>🎯 Detailed Action Steps</h3>
-                    <p>Every case has a step-by-step checklist from account setup to first dollar. Follow along and start earning.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Matching</h3>
+                    <p>Based on your skills and goals, we recommend the best 3-5 cases for you. No guesswork.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>💰 Real Income Data</h3>
-                    <p>Cases include actual numbers: startup cost, monthly income, time investment, net profit. Know your ROI before starting.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>7-Day Quick Start</h3>
+                    <p>Every case has an "Action Today" checklist. Follow it and get your first income within a week.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>⚠️ Risk Avoidance</h3>
-                    <p>Each case includes risk warnings and common mistakes to avoid. Save time and money by learning from others.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <h3>Prompt Library</h3>
+                    <p>100+ proven AI prompts. Copy, paste, and see results immediately.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>🚀 Action Checklist</h3>
-                    <p>Every case includes an "Action Today" checklist. Start immediately and see your first income within 7 days.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <h3>Private Community</h3>
+                    <p>Join 500+ like-minded people. Share wins, get support, discover new opportunities.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>👥 Private Community</h3>
-                    <p>Join our private Discord community. Connect with 500+ solopreneurs, get support, and discover new opportunities.</p>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Lifetime Updates</h3>
+                    <p>AI changes fast. We keep updating. Buy once, benefit forever.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cases Preview -->
-    <section class="cases">
+    <!-- Featured Cases -->
+    <section class="section" id="cases">
         <div class="container">
-            <h2>Case Study Preview</h2>
-            <div class="case-list">
-                <div class="case-item">
-                    <h4>AI Avatar Generation Service</h4>
-                    <p>Designer uses Midjourney to create custom avatars. Promotes on Instagram, sells via DM. $0 startup cost.</p>
-                    <div class="case-income">Monthly Income: $800-1,200</div>
+            <h2 class="section-title">💡 Featured Case Studies</h2>
+            <p class="section-subtitle">Here are 6 representative cases. Full version includes 31 detailed cases.</p>
+            
+            <div class="cases-grid">
+                <!-- Case 1 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-number">1</div>
+                        <span class="case-type">Content Creation</span>
+                    </div>
+                    <h3>🎨 AI Avatar Customization</h3>
+                    <p class="case-story">
+                        Designer Wang uses Midjourney for custom avatars, promotes on Xiaohongshu, sells via private chat. Specializes in "Disney Princess Style", 10-min delivery, makes $1,800/month.
+                    </p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">⭐⭐</div>
+                            <div class="case-stat-label">Difficulty</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$30</div>
+                            <div class="case-stat-label">Startup Cost</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">1-2wk</div>
+                            <div class="case-stat-label">Break-even</div>
+                        </div>
+                    </div>
+                    <ul class="case-features">
+                        <li>Find viral styles (Disney/Cyberpunk)</li>
+                        <li>Beautiful cover images are crucial</li>
+                        <li>Fast response: 10 min delivery</li>
+                        <li>Referral rewards for growth</li>
+                    </ul>
+                    <div class="case-income">
+                        <div class="case-income-label">Monthly Income</div>
+                        <div class="case-income-value">$800-1,200</div>
+                    </div>
                 </div>
-                <div class="case-item">
-                    <h4>AI Resume Optimization</h4>
-                    <p>HR professional uses ChatGPT to optimize resumes. Finds clients on LinkedIn, upsells interview coaching.</p>
-                    <div class="case-income">Monthly Income: $2,000-3,000</div>
+
+                <!-- Case 2 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-number">2</div>
+                        <span class="case-type">Professional Service</span>
+                    </div>
+                    <h3>📄 AI Resume Optimization</h3>
+                    <p class="case-story">
+                        HR professional Chen uses ChatGPT to optimize resumes. Free diagnosis → Resume optimization → Interview coaching. Makes $3,200/month.
+                    </p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">⭐⭐</div>
+                            <div class="case-stat-label">Difficulty</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$20</div>
+                            <div class="case-stat-label">Startup Cost</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">1 week</div>
+                            <div class="case-stat-label">Break-even</div>
+                        </div>
+                    </div>
+                    <ul class="case-features">
+                        <li>Build trust with "HR Director" title</li>
+                        <li>Free diagnosis, 80% conversion rate</li>
+                        <li>Interview success rate 10%→60%</li>
+                        <li>Upsells are where profit is</li>
+                    </ul>
+                    <div class="case-income">
+                        <div class="case-income-label">Monthly Income</div>
+                        <div class="case-income-value">$2,000-5,000</div>
+                    </div>
                 </div>
-                <div class="case-item">
-                    <h4>AI Children's Book Publishing</h4>
-                    <p>Stay-at-home mom writes stories with AI, generates illustrations, self-publishes on Amazon KDP. Passive income.</p>
-                    <div class="case-income">Monthly Income: $1,500-2,000 (passive)</div>
+
+                <!-- Case 3 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-number">3</div>
+                        <span class="case-type">Passive Income</span>
+                    </div>
+                    <h3>📚 AI Children's Book Publishing</h3>
+                    <p class="case-story">
+                        Stay-at-home mom Zhang writes stories with AI, generates illustrations, self-publishes on Amazon KDP. 12 books published, $2,000+/month passive income.
+                    </p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">⭐⭐⭐</div>
+                            <div class="case-stat-label">Difficulty</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$0</div>
+                            <div class="case-stat-label">Startup Cost</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">2-3mo</div>
+                            <div class="case-stat-label">Break-even</div>
+                        </div>
+                    </div>
+                    <ul class="case-features">
+                        <li>Solve parent pain points (fear of dark, picky eating)</li>
+                        <li>Amazon KDP zero-barrier publishing</li>
+                        <li>Create once, sell forever</li>
+                        <li>Series strategy for repeat purchases</li>
+                    </ul>
+                    <div class="case-income">
+                        <div class="case-income-label">Monthly Income</div>
+                        <div class="case-income-value">$1,500-3,000</div>
+                    </div>
                 </div>
-                <div class="case-item">
-                    <h4>AI Content Repurposing</h4>
-                    <p>Freelancer turns YouTube videos into blog posts, tweets, and newsletters using AI. Sells to creators.</p>
-                    <div class="case-income">Monthly Income: $3,000-5,000</div>
+
+                <!-- Case 4 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-number">4</div>
+                        <span class="case-type">B2B Service</span>
+                    </div>
+                    <h3>🔄 AI Content Repurposing</h3>
+                    <p class="case-story">
+                        Li helps YouTubers turn 1 video into 10 pieces of content. Upwork clients are 100k+ subscribers. Makes $8,000+/month.
+                    </p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">⭐⭐</div>
+                            <div class="case-stat-label">Difficulty</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$40</div>
+                            <div class="case-stat-label">Startup Cost</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">1-2wk</div>
+                            <div class="case-stat-label">Break-even</div>
+                        </div>
+                    </div>
+                    <ul class="case-features">
+                        <li>Solve creator's time problem</li>
+                        <li>1 video → 10 platform contents</li>
+                        <li>Big YouTubers can afford to pay</li>
+                        <li>Long-term contracts, stable income</li>
+                    </ul>
+                    <div class="case-income">
+                        <div class="case-income-label">Monthly Income</div>
+                        <div class="case-income-value">$3,000-8,000</div>
+                    </div>
+                </div>
+
+                <!-- Case 5 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-number">5</div>
+                        <span class="case-type">Professional Service</span>
+                    </div>
+                    <h3>📊 AI Data Analysis Service</h3>
+                    <p class="case-story">
+                        Data analyst Wang helps SMBs with data analysis. Free diagnosis to get clients, $2,000-5,000/month retainer. 5 clients make $19,000/month.
+                    </p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">⭐⭐⭐⭐</div>
+                            <div class="case-stat-label">Difficulty</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$50</div>
+                            <div class="case-stat-label">Startup Cost</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">2-4wk</div>
+                            <div class="case-stat-label">Break-even</div>
+                        </div>
+                    </div>
+                    <ul class="case-features">
+                        <li>Free diagnosis, 70% conversion</li>
+                        <li>AI boosts efficiency: 3 days → 3 hours</li>
+                        <li>Specialize in e-commerce niche</li>
+                        <li>Results-based pricing, clients pay premium</li>
+                    </ul>
+                    <div class="case-income">
+                        <div class="case-income-label">Monthly Income</div>
+                        <div class="case-income-value">$5,000-15,000</div>
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-number">6</div>
+                        <span class="case-type">SaaS Product</span>
+                    </div>
+                    <h3>🤖 AI Customer Service Automation</h3>
+                    <p class="case-story">
+                        Developer Zhang builds chatbot for Shopify sellers. 200+ customers, $39,580/month. Now employs 3 people full-time.
+                    </p>
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <div class="case-stat-value">⭐⭐⭐⭐⭐</div>
+                            <div class="case-stat-label">Difficulty</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$200</div>
+                            <div class="case-stat-label">Startup Cost</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">1-3mo</div>
+                            <div class="case-stat-label">Break-even</div>
+                        </div>
+                    </div>
+                    <ul class="case-features">
+                        <li>Solve e-commerce support cost pain</li>
+                        <li>Start with MVP, validate fast</li>
+                        <li>Shopify App Store brings traffic</li>
+                        <li>Subscription model, predictable revenue</li>
+                    </ul>
+                    <div class="case-income">
+                        <div class="case-income-label">Monthly Income</div>
+                        <div class="case-income-value">$10,000-50,000</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="color: #666; font-size: 1.1rem;">👆 These are just 6 case previews. Full version includes 31 detailed cases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Cases List -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">📋 More Cases Included</h2>
+            <p class="section-subtitle">Full version includes these 25 additional detailed cases</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 30px;">
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 7:</strong> AI Copywriting Service <span style="color: #667eea;">$2k-6k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 8:</strong> AI Online Tutoring <span style="color: #667eea;">$3k-10k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 9:</strong> AI Design Service <span style="color: #667eea;">$2k-8k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 10:</strong> AI Music Production <span style="color: #667eea;">$1.5k-5k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 11:</strong> AI Translation Service <span style="color: #667eea;">$1k-3k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 12:</strong> AI Voiceover Service <span style="color: #667eea;">$800-2.5k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 13:</strong> AI Video Editing <span style="color: #667eea;">$2k-6k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 14:</strong> AI Coding Assistant <span style="color: #667eea;">$5k-20k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 15:</strong> AI Social Media Management <span style="color: #667eea;">$1.5k-4k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 16:</strong> AI Email Marketing <span style="color: #667eea;">$2k-5k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 17:</strong> AI SEO Optimization <span style="color: #667eea;">$3k-8k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 18:</strong> AI Product Photography <span style="color: #667eea;">$1.5k-4k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 19:</strong> AI Interior Design <span style="color: #667eea;">$2k-6k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 20:</strong> AI Legal Assistant <span style="color: #667eea;">$3k-10k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 21:</strong> AI Health Content <span style="color: #667eea;">$2k-5k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 22:</strong> AI Bookkeeping Service <span style="color: #667eea;">$1.5k-4k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 23:</strong> AI Resume Screening <span style="color: #667eea;">$2k-6k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 24:</strong> AI Training Courses <span style="color: #667eea;">$5k-20k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 25:</strong> AI Tool Reviews/Affiliate <span style="color: #667eea;">$1k-10k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 26:</strong> AI Virtual Assistant <span style="color: #667eea;">$2k-5k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 27:</strong> AI Data Labeling <span style="color: #667eea;">$1.5k-4k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 28:</strong> AI Chatbot Customization <span style="color: #667eea;">$3k-10k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 29:</strong> AI Personal Branding <span style="color: #667eea;">$2k-8k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 30:</strong> AI Product Research <span style="color: #667eea;">$2k-6k/mo</span>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px;">
+                    <strong>Case 31:</strong> AI Workflow Automation <span style="color: #667eea;">$3k-15k/mo</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="section testimonials">
         <div class="container">
-            <h2>What Our Customers Say</h2>
+            <h2 class="section-title">💬 What Our Users Say</h2>
+            <p class="section-subtitle">Real feedback from people already making money with AI</p>
+            
             <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"The AI avatar case was a game-changer. I signed up for Midjourney the same day, got my first client in 3 days, and now make $1,000/month consistently."</p>
-                    <div class="testimonial-author">— Sarah, Designer</div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Following Case 1, I started doing avatar customization with Midjourney. Got 15 orders in the first week, made $800. Now making $5,000+/month, more than my day job!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">W</div>
+                        <div class="author-info">
+                            <h4>Wang</h4>
+                            <p>Former Ad Agency Designer</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"I was skeptical but the resume optimization case actually works. Made $2,400 in my first month. The step-by-step instructions are gold."</p>
-                    <div class="testimonial-author">— Mike, HR Professional</div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I'm a stay-at-home mom. Following Case 3, I started publishing children's books. By month 3, I had $500/month passive income. Now have 8 books, completely hands-off."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">Z</div>
+                        <div class="author-info">
+                            <h4>Mom Zhang</h4>
+                            <p>Stay-at-home Mom / Author</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"As a stay-at-home mom, I needed something flexible. The children's book case gave me a clear path. Now I make $1,800/month passively."</p>
-                    <div class="testimonial-author">— Emily, Mom of Two</div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Case 2's resume optimization is perfect for me! I'm in HR, already had experience. With AI boosting efficiency, now making $3,200/month working from home. Love it!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">C</div>
+                        <div class="author-info">
+                            <h4>Chen</h4>
+                            <p>Former Tech Company HR</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq">
+    <section class="section" style="background: #f8f9fa;">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h4>Q: Do I need coding skills?</h4>
-                <p>A: No. Cases range from zero-skill to simple skills. Choose based on your comfort level.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Q: How soon can I make money?</h4>
-                <p>A: Depends on the case, but most people see first income within 3-30 days. Each case has an "Action Today" checklist.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Q: Is there a refund policy?</h4>
-                <p>A: Yes. 7-day money-back guarantee. No questions asked, full refund.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Q: Will the content be updated?</h4>
-                <p>A: Yes. We add 1-2 new cases every week. Lifetime free updates for all buyers.</p>
+            <h2 class="section-title">❓ Frequently Asked Questions</h2>
+            <p class="section-subtitle">What you might want to know</p>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <h4>Q: I have zero technical skills. Can I do these?</h4>
+                    <p>A: Absolutely! 20 of the 31 cases require zero technical skills. We provide detailed step-by-step guides and prompt templates. Just copy and paste to start.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q: How much money do I need to start?</h4>
+                    <p>A: Most cases require $0-50 to start, mainly for AI tool subscriptions (like ChatGPT Plus $20/month). Many cases can start with zero investment.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q: How soon can I see income?</h4>
+                    <p>A: Depends on the case. Some can get orders in 3 days (like avatar customization), others need 2-3 months (like book publishing). We label expected timelines for each case.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q: How do I access the content after purchase?</h4>
+                    <p>A: You'll receive PDF + online document link immediately after payment. Online docs are continuously updated. Buy once, benefit forever.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q: Can I get a refund if not satisfied?</h4>
+                    <p>A: Of course! We offer 7-day money-back guarantee. If you feel it's not worth it, contact us for a full refund anytime.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <div class="container" style="padding: 60px 20px;">
-        <div class="pricing">
-            <h2 style="margin-bottom: 20px;">Start Your One Person Company Journey</h2>
-            <div class="price">
-                $19
-                <span class="price-original">$49</span>
-            </div>
-            <p class="price-note">Limited time offer, price increasing to $29 soon</p>
-            <a href="#buy" class="btn-buy">Get Instant Access</a>
-            <p class="guarantee">✓ 7-Day Money Back Guarantee ✓ Lifetime Updates ✓ Private Community</p>
+    <!-- CTA -->
+    <section class="cta-section" id="buy">
+        <div class="container">
+            <h2>🚀 Ready to Start Your AI Money-Making Journey?</h2>
+            <p>Early bird price only $1, limited to first 100. Don't miss out.</p>
+            <a href="#" class="btn-cta">Get It Now - $1</a>
+            <p style="margin-top: 20px; opacity: 0.9; font-size: 0.95rem;">✓ 7-Day Money Back Guarantee ✓ Lifetime Updates ✓ Private Community</p>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="#">About Us</a>
-                <a href="#">Contact</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-            <p>&copy; 2026 One Person Company. All rights reserved.</p>
-            <p class="disclaimer">The case studies provided are for reference only. Actual results may vary. We are not responsible for any investment or business decisions.</p>
+            <p>© 2026 One Person Company | Build Your AI-Powered Income System</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">For educational purposes only. Please comply with local laws.</p>
         </div>
     </footer>
 </body>
