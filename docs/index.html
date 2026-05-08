@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一人公司指南 - 31个AI赚钱案例</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7f6f3;
+            --bg-tertiary: #f1f1ef;
+            --text-primary: #37352f;
+            --text-secondary: #6b6b6b;
+            --text-tertiary: #9ca3af;
+            --accent: #667eea;
+            --accent-light: #f0f4ff;
+            --border: #e3e2e0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --callout-blue: #e0f2fe;
+            --callout-green: #d1fae5;
+            --callout-yellow: #fef3c7;
+            --callout-red: #fee2e2;
+            --callout-purple: #f3e8ff;
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Layout */
+        .app {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px 0;
+            z-index: 100;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        .sidebar-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            padding-left: 42px;
+        }
+        
+        .nav-section {
+            margin-bottom: 8px;
+        }
+        
+        .nav-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 20px;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .nav-item:hover {
+            background: rgba(0,0,0,0.03);
+            color: var(--text-primary);
+        }
+        
+        .nav-item.active {
+            background: var(--accent-light);
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .nav-toggle {
+            margin-left: auto;
+            font-size: 0.7rem;
+            transition: transform 0.2s;
+        }
+        
+        .nav-toggle.expanded {
+            transform: rotate(90deg);
+        }
+        
+        .nav-children {
+            display: none;
+            padding-left: 20px;
+        }
+        
+        .nav-children.expanded {
+            display: block;
+        }
+        
+        .nav-child {
+            padding: 6px 20px;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .nav-child:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-child.active {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        /* Main Content */
+        .main {
+            flex: 1;
+            margin-left: 280px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a6fd6;
+        }
+        
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        
+        .page-meta {
+            color: var(--text-tertiary);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+        
+        /* Typography */
+        h1 { font-size: 2rem; font-weight: 700; margin: 48px 0 24px; line-height: 1.3; }
+        h2 { font-size: 1.5rem; font-weight: 600; margin: 40px 0 20px; line-height: 1.4; }
+        h3 { font-size: 1.25rem; font-weight: 600; margin: 32px 0 16px; }
+        h4 { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px; }
+        
+        p {
+            margin: 16px 0;
+            color: var(--text-secondary);
+        }
+        
+        /* Cover Image */
+        .cover-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .cover-content {
+            text-align: center;
+            z-index: 1;
+        }
+        
+        .cover-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Callout Blocks */
+        .callout {
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        
+        .callout-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .callout-content {
+            flex: 1;
+        }
+        
+        .callout-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .callout-blue { background: var(--callout-blue); }
+        .callout-green { background: var(--callout-green); }
+        .callout-yellow { background: var(--callout-yellow); }
+        .callout-red { background: var(--callout-red); }
+        .callout-purple { background: var(--callout-purple); }
+        
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 24px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        
+        th {
+            background: var(--bg-tertiary);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover td {
+            background: var(--bg-secondary);
+        }
+        
+        /* Code Blocks */
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .code-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .code-lang {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+        
+        /* Toggle Lists */
+        .toggle {
+            margin: 16px 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .toggle-header {
+            padding: 16px 20px;
+            background: var(--bg-primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .toggle-header:hover {
+            background: var(--bg-secondary);
+        }
+        
+        .toggle-arrow {
+            transition: transform 0.2s;
+            color: var(--text-tertiary);
+        }
+        
+        .toggle.expanded .toggle-arrow {
+            transform: rotate(90deg);
+        }
+        
+        .toggle-content {
+            display: none;
+            padding: 20px;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+        }
+        
+        .toggle.expanded .toggle-content {
+            display: block;
+        }
+        
+        /* Checkboxes */
+        .checkbox-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+            color: var(--text-secondary);
+        }
+        
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .checkbox:hover {
+            border-color: var(--accent);
+        }
+        
+        .checkbox.checked {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        /* Quote */
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 24px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        /* Divider */
+        hr {
+            border: none;
+            height: 1px;
+            background: var(--border);
+            margin: 40px 0;
+        }
+        
+        /* Tags */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .tag-blue { background: var(--callout-blue); color: #0369a1; }
+        .tag-green { background: var(--callout-green); color: #059669; }
+        .tag-yellow { background: var(--callout-yellow); color: #d97706; }
+        .tag-red { background: var(--callout-red); color: #dc2626; }
+        .tag-purple { background: var(--callout-purple); color: #7c3aed; }
+        
+        /* Case Card */
+        .case-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            transition: all 0.2s;
+        }
+        
+        .case-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .case-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .case-number {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .case-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .case-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .case-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+        }
+        
+        .case-stat {
+            text-align: center;
+        }
+        
+        .case-stat-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .case-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            margin-top: 4px;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            margin: 24px 0;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main {
+                margin-left: 0;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .case-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cover-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">💼</div>
+                    <span>一人公司指南</span>
+                </div>
+                <div class="sidebar-subtitle">31个AI赚钱案例</div>
+            </div>
+            
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-title">开始</div>
+                    <a href="#welcome" class="nav-item active">
+                        <span class="nav-icon">👋</span>
+                        <span>欢迎</span>
+                    </a>
+                    <a href="#how-to-use" class="nav-item">
+                        <span class="nav-icon">📖</span>
+                        <span>使用指南</span>
+                    </a>
+                    <a href="#roadmap" class="nav-item">
+                        <span class="nav-icon">🗺️</span>
+                        <span>学习路径</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-title">精选案例</div>
+                    <div class="nav-item" onclick="toggleNav(this)">
+                        <span class="nav-icon">🎨</span>
+                        <span>内容创作类</span>
+                        <span class="nav-toggle">▶</span>
+                    </div>
+                    <div class="nav-children">
+                        <a href="#case1" class="nav-child">案例1: AI头像定制</a>
+                        <a href="#case7" class="nav-child">案例7: AI文案撰写</a>
+                        <a href="#case9" class="nav-child">案例9: AI设计服务</a>
+                    </div>
+                    
+                    <div class="nav-item" onclick="toggleNav(this)">
+                        <span class="nav-icon">💼</span>
+                        <span>服务类</span>
+                        <span class="nav-toggle">▶</span>
+                    </div>
+                    <div class="nav-children">
+                        <a href="#case2" class="nav-child">案例2: 简历优化</a>
+                        <a href="#case4" class="nav-child">案例4: 内容Repurposing</a>
+                        <a href="#case5" class="nav-child">案例5: 数据分析</a>
+                    </div>
+                    
+                    <div class="nav-item" onclick="toggleNav(this)">
+                        <span class="nav-icon">💰</span>
+                        <span>被动收入类</span>
+                        <span class="nav-toggle">▶</span>
+                    </div>
+                    <div class="nav-children">
+                        <a href="#case3" class="nav-child">案例3: 儿童绘本</a>
+                        <a href="#case10" class="nav-child">案例10: AI音乐制作</a>
+                    </div>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-title">资源</div>
+                    <a href="#prompts" class="nav-item">
+                        <span class="nav-icon">💬</span>
+                        <span>Prompt模板库</span>
+                    </a>
+                    <a href="#tools" class="nav-item">
+                        <span class="nav-icon">🛠️</span>
+                        <span>工具推荐</span>
+                    </a>
+                    <a href="#community" class="nav-item">
+                        <span class="nav-icon">👥</span>
+                        <span>社群</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main">
+            <header class="header">
+                <div class="breadcrumb">
+                    <a href="#">一人公司指南</a>
+                    <span>/</span>
+                    <span>欢迎</span>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">🎁 分享</button>
+                    <button class="btn btn-primary">💬 加入社群</button>
+                </div>
+            </header>
+            
+            <article class="content">
+                <!-- Cover -->
+                <div class="cover-image">
+                    <div class="cover-content">
+                        <div class="cover-title">一人公司指南</div>
+                        <div class="cover-subtitle">31个真实AI赚钱案例 · 手把手教你月入过万</div>
+                    </div>
+                </div>
+                
+                <h1 class="page-title">👋 欢迎</h1>
+                <div class="page-meta">最后更新：2026年5月8日 · 阅读时间：约30分钟</div>
+                
+                <!-- Welcome Callout -->
+                <div class="callout callout-blue">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-content">
+                        <div class="callout-title">快速开始</div>
+                        <p>如果你是第一次使用，建议先阅读「使用指南」，然后根据你的技能和目标选择3-5个案例深入研究。每个案例都有详细的操作步骤，跟着做，7天内就能获得第一笔收入。</p>
+                    </div>
+                </div>
+                
+                <h2>📊 内容概览</h2>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>分类</th>
+                                <th>案例数量</th>
+                                <th>难度</th>
+                                <th>收入潜力</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="tag tag-blue">内容创作</span></td>
+                                <td>8个</td>
+                                <td>⭐⭐</td>
+                                <td>$800-6,000/月</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag tag-green">服务类</span></td>
+                                <td>12个</td>
+                                <td>⭐⭐-⭐⭐⭐⭐</td>
+                                <td>$1,500-15,000/月</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag tag-yellow">被动收入</span></td>
+                                <td>6个</td>
+                                <td>⭐⭐⭐</td>
+                                <td>$1,000-5,000/月</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag tag-purple">SaaS/产品</span></td>
+                                <td>5个</td>
+                                <td>⭐⭐⭐⭐⭐</td>
+                                <td>$5,000-50,000/月</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2>🎯 学习进度</h2>
+                
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>总体进度</span>
+                        <span>0/31 案例</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                
+                <div class="checkbox-list">
+                    <div class="checkbox-item">
+                        <div class="checkbox"></div>
+                        <span>阅读使用指南</span>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox"></div>
+                        <span>选择3-5个感兴趣的案例</span>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox"></div>
+                        <span>完成第一个案例的行动清单</span>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox"></div>
+                        <span>获得第一笔收入</span>
+                    </div>
+                </div>
+                
+                <h2>🔥 热门案例推荐</h2>
+                
+                <!-- Case 1 Preview -->
+                <div class="case-card" id="case1">
+                    <div class="case-header">
+                        <div class="case-number">1</div>
+                        <div class="case-title">AI头像定制服务</div>
+                    </div>
+                    <div class="case-meta">
+                        <span class="tag tag-blue">内容创作</span>
+                        <span class="tag tag-green">新手友好</span>
+                    </div>
+                    <p>95后设计师小王，用Midjourney做头像定制，小红书引流，私域成交。专做"迪士尼公主风"，10分钟出图，月入¥12,000。</p>
+                    
+                    <div class="case-stats-grid">
+                        <div class="case-stat">
+                            <div class="case-stat-value">⭐⭐</div>
+                            <div class="case-stat-label">难度</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$30</div>
+                            <div class="case-stat-label">启动成本</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">1-2周</div>
+                            <div class="case-stat-label">回本周期</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$800-1,200</div>
+                            <div class="case-stat-label">月收入</div>
+                        </div>
+                    </div>
+                    
+                    <div class="toggle">
+                        <div class="toggle-header" onclick="toggleContent(this)">
+                            <span class="toggle-arrow">▶</span>
+                            <span>查看完整案例详情</span>
+                        </div>
+                        <div class="toggle-content">
+                            <h3>📖 真实故事</h3>
+                            <p>95后设计师小王，原本在一家广告公司做平面设计，月薪8000。2023年6月，她发现小红书上"迪士尼风格头像"爆火，于是用Midjourney开始接单...</p>
+                            
+                            <h3>🛠️ 操作步骤</h3>
+                            <div class="checkbox-list">
+                                <div class="checkbox-item">
+                                    <div class="checkbox checked"></div>
+                                    <span>第1天：注册Midjourney，研究热门风格</span>
+                                </div>
+                                <div class="checkbox-item">
+                                    <div class="checkbox"></div>
+                                    <span>第2-3天：搭建小红书账号，发布作品</span>
+                                </div>
+                                <div class="checkbox-item">
+                                    <div class="checkbox"></div>
+                                    <span>第4-7天：接单交付，优化流程</span>
+                                </div>
+                            </div>
+                            
+                            <h3>💰 收入计算</h3>
+                            <div class="table-container">
+                                <table>
+                                    <tr>
+                                        <td>单价</td>
+                                        <td>¥35-70 ($5-10)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>日接单量</td>
+                                        <td>5-10单</td>
+                                    </tr>
+                                    <tr>
+                                        <td>日收入</td>
+                                        <td>¥175-700</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>月净利润</strong></td>
+                                        <td><strong>¥5,000-20,000</strong></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case 2 Preview -->
+                <div class="case-card" id="case2">
+                    <div class="case-header">
+                        <div class="case-number">2</div>
+                        <div class="case-title">AI简历优化服务</div>
+                    </div>
+                    <div class="case-meta">
+                        <span class="tag tag-green">服务类</span>
+                        <span class="tag tag-yellow">需专业背景</span>
+                    </div>
+                    <p>HR小陈用ChatGPT帮求职者优化简历，BOSS直聘接单。免费诊断→简历优化→面试辅导，月入¥22,500。</p>
+                    
+                    <div class="case-stats-grid">
+                        <div class="case-stat">
+                            <div class="case-stat-value">⭐⭐</div>
+                            <div class="case-stat-label">难度</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$20</div>
+                            <div class="case-stat-label">启动成本</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">1周</div>
+                            <div class="case-stat-label">回本周期</div>
+                        </div>
+                        <div class="case-stat">
+                            <div class="case-stat-value">$2,000-5,000</div>
+                            <div class="case-stat-label">月收入</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>💬 Prompt模板示例</h2>
+                
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Prompt</span>
+                    </div>
+                    <div>你是一位资深HR，有10年招聘经验。请帮我优化以下简历，要求：
+1. 用STAR法则描述工作经历
+2. 加入行业关键词，方便ATS筛选
+3. 量化成果，用数字说话
+4. 针对[目标岗位]定制
+
+原简历：
+[paste resume]</div>
+                </div>
+                
+                <div class="callout callout-green">
+                    <div class="callout-icon">✅</div>
+                    <div class="callout-content">
+                        <div class="callout-title">下一步</div>
+                        <p>现在你已经了解了内容概览，建议点击左侧导航栏的「使用指南」，了解如何高效使用这份资料。</p>
+                    </div>
+                </div>
+                
+            </article>
+        </main>
+    </div>
+    
+    <script>
+        // Toggle navigation
+        function toggleNav(element) {
+            const toggle = element.querySelector('.nav-toggle');
+            const children = element.nextElementSibling;
+            
+            toggle.classList.toggle('expanded');
+            children.classList.toggle('expanded');
+        }
+        
+        // Toggle content
+        function toggleContent(element) {
+            const toggle = element.parentElement;
+            toggle.classList.toggle('expanded');
+        }
+        
+        // Checkbox toggle
+        document.querySelectorAll('.checkbox').forEach(checkbox => {
+            checkbox.addEventListener('click', function() {
+                this.classList.toggle('checked');
+            });
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
