@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Person Company - Build Your AI-Powered Business</title>
+    <meta name="description" content="31 real AI business cases showing how to build a profitable one-person company. No team, no funding needed. Start earning $1,000+/month.">
+    <meta name="keywords" content="one person company, AI business, solopreneur, passive income, side hustle">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Pricing Card */
+        .pricing {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: -40px auto 60px;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .price-original {
+            font-size: 1.5rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+        .price-note {
+            color: #666;
+            margin: 10px 0 30px;
+        }
+        .btn-buy {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .btn-buy:hover {
+            transform: translateY(-2px);
+        }
+        .guarantee {
+            color: #48bb78;
+            font-size: 0.9rem;
+        }
+        
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background: white;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            padding: 30px;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        /* Cases Preview */
+        .cases {
+            padding: 60px 0;
+        }
+        .cases h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .case-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .case-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .case-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .case-income {
+            color: #48bb78;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 0;
+            background: white;
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .testimonial {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+        }
+        .faq h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            background: white;
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .faq-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .disclaimer {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .stats { flex-direction: column; gap: 20px; }
+            .price { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>One Person Company</h1>
+            <p>31 real AI business cases showing you how to build a profitable one-person company. No team, no funding, no experience needed. Start earning $1,000+/month.</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">31</div>
+                    <div class="stat-label">Real Cases</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Action Steps</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$0</div>
+                    <div class="stat-label">Startup Cost</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pricing -->
+    <div class="container">
+        <div class="pricing">
+            <div class="price">
+                $19
+                <span class="price-original">$49</span>
+            </div>
+            <p class="price-note">Limited time offer, price increasing soon</p>
+            <a href="#buy" class="btn-buy">Get Instant Access</a>
+            <p class="guarantee">✓ 7-Day Money Back Guarantee ✓ Lifetime Updates ✓ Private Community</p>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>What You'll Get</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📚 31 Real Cases</h3>
+                    <p>Each case includes: operator background, exact method, income data, success factors, risk warnings. Real methods, not theory.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Detailed Action Steps</h3>
+                    <p>Every case has a step-by-step checklist from account setup to first dollar. Follow along and start earning.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Real Income Data</h3>
+                    <p>Cases include actual numbers: startup cost, monthly income, time investment, net profit. Know your ROI before starting.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚠️ Risk Avoidance</h3>
+                    <p>Each case includes risk warnings and common mistakes to avoid. Save time and money by learning from others.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 Action Checklist</h3>
+                    <p>Every case includes an "Action Today" checklist. Start immediately and see your first income within 7 days.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 Private Community</h3>
+                    <p>Join our private Discord community. Connect with 500+ solopreneurs, get support, and discover new opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Preview -->
+    <section class="cases">
+        <div class="container">
+            <h2>Case Study Preview</h2>
+            <div class="case-list">
+                <div class="case-item">
+                    <h4>AI Avatar Generation Service</h4>
+                    <p>Designer uses Midjourney to create custom avatars. Promotes on Instagram, sells via DM. $0 startup cost.</p>
+                    <div class="case-income">Monthly Income: $800-1,200</div>
+                </div>
+                <div class="case-item">
+                    <h4>AI Resume Optimization</h4>
+                    <p>HR professional uses ChatGPT to optimize resumes. Finds clients on LinkedIn, upsells interview coaching.</p>
+                    <div class="case-income">Monthly Income: $2,000-3,000</div>
+                </div>
+                <div class="case-item">
+                    <h4>AI Children's Book Publishing</h4>
+                    <p>Stay-at-home mom writes stories with AI, generates illustrations, self-publishes on Amazon KDP. Passive income.</p>
+                    <div class="case-income">Monthly Income: $1,500-2,000 (passive)</div>
+                </div>
+                <div class="case-item">
+                    <h4>AI Content Repurposing</h4>
+                    <p>Freelancer turns YouTube videos into blog posts, tweets, and newsletters using AI. Sells to creators.</p>
+                    <div class="case-income">Monthly Income: $3,000-5,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"The AI avatar case was a game-changer. I signed up for Midjourney the same day, got my first client in 3 days, and now make $1,000/month consistently."</p>
+                    <div class="testimonial-author">— Sarah, Designer</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"I was skeptical but the resume optimization case actually works. Made $2,400 in my first month. The step-by-step instructions are gold."</p>
+                    <div class="testimonial-author">— Mike, HR Professional</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"As a stay-at-home mom, I needed something flexible. The children's book case gave me a clear path. Now I make $1,800/month passively."</p>
+                    <div class="testimonial-author">— Emily, Mom of Two</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Q: Do I need coding skills?</h4>
+                <p>A: No. Cases range from zero-skill to simple skills. Choose based on your comfort level.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: How soon can I make money?</h4>
+                <p>A: Depends on the case, but most people see first income within 3-30 days. Each case has an "Action Today" checklist.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: Is there a refund policy?</h4>
+                <p>A: Yes. 7-day money-back guarantee. No questions asked, full refund.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: Will the content be updated?</h4>
+                <p>A: Yes. We add 1-2 new cases every week. Lifetime free updates for all buyers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <div class="container" style="padding: 60px 20px;">
+        <div class="pricing">
+            <h2 style="margin-bottom: 20px;">Start Your One Person Company Journey</h2>
+            <div class="price">
+                $19
+                <span class="price-original">$49</span>
+            </div>
+            <p class="price-note">Limited time offer, price increasing to $29 soon</p>
+            <a href="#buy" class="btn-buy">Get Instant Access</a>
+            <p class="guarantee">✓ 7-Day Money Back Guarantee ✓ Lifetime Updates ✓ Private Community</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p>&copy; 2026 One Person Company. All rights reserved.</p>
+            <p class="disclaimer">The case studies provided are for reference only. Actual results may vary. We are not responsible for any investment or business decisions.</p>
+        </div>
+    </footer>
+</body>
+</html>
