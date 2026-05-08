@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一人公司指南 - 用AI打造个人赚钱系统</title>
+    <meta name="description" content="31个真实AI赚钱案例，教你如何用AI做一人公司，月入过万。包含详细操作步骤、收入数据和避坑指南。">
+    <meta name="keywords" content="一人公司,AI赚钱,副业,自由职业,被动收入">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Pricing Card */
+        .pricing {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: -40px auto 60px;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .price-original {
+            font-size: 1.5rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+        .price-note {
+            color: #666;
+            margin: 10px 0 30px;
+        }
+        .btn-buy {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .btn-buy:hover {
+            transform: translateY(-2px);
+        }
+        .guarantee {
+            color: #48bb78;
+            font-size: 0.9rem;
+        }
+        
+        /* Features */
+        .features {
+            padding: 60px 0;
+            background: white;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            padding: 30px;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        /* Cases Preview */
+        .cases {
+            padding: 60px 0;
+        }
+        .cases h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .case-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .case-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .case-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .case-income {
+            color: #48bb78;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 0;
+            background: white;
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .testimonial {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial-author {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+        }
+        .faq h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            background: white;
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        .faq-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .disclaimer {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .stats { flex-direction: column; gap: 20px; }
+            .price { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>一人公司指南</h1>
+            <p>31个真实AI赚钱案例，手把手教你用AI打造个人赚钱系统。无需团队，无需资金，一个人就能月入过万。</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">31</div>
+                    <div class="stat-label">真实案例</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">实操步骤</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">启动资金</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pricing -->
+    <div class="container">
+        <div class="pricing">
+            <div class="price">
+                ¥99
+                <span class="price-original">￥299</span>
+            </div>
+            <p class="price-note">限时特惠，涨价在即</p>
+            <a href="#buy" class="btn-buy">立即购买</a>
+            <p class="guarantee">✓ 7天无理由退款 ✓ 永久更新 ✓ 专属社群</p>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>你将获得什么</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📚 31个真实案例</h3>
+                    <p>每个案例都包含：操作者背景、具体方法、收入数据、成功要素、风险提示。不是理论，是真实可复制的方法。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 详细操作步骤</h3>
+                    <p>每个案例都有详细的执行清单，从注册账号到获得第一笔收入，手把手教你每一步怎么做。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 真实收入数据</h3>
+                    <p>案例包含真实收入数据：启动成本、月收入、投入时间、净利润。让你清楚知道投入产出比。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚠️ 避坑指南</h3>
+                    <p>每个案例都有风险提示和避坑建议，帮你避开新手常犯的错误，少走弯路。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 立即行动清单</h3>
+                    <p>每个案例都配有"立即行动"清单，今天就能开始执行，7天内看到第一笔收入。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 专属社群</h3>
+                    <p>购买后加入专属微信群，与500+同路人一起交流，获取最新案例和机会。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Preview -->
+    <section class="cases">
+        <div class="container">
+            <h2>部分案例预览</h2>
+            <div class="case-list">
+                <div class="case-item">
+                    <h4>AI头像生成服务</h4>
+                    <p>95后设计师小王，用Midjourney做头像定制，小红书引流，私域成交。</p>
+                    <div class="case-income">月收入：¥2,500-3,000</div>
+                </div>
+                <div class="case-item">
+                    <h4>AI论文降重服务</h4>
+                    <p>大学生小李，毕业季做论文降重，闲鱼+淘宝+校园群，高峰期月入过万。</p>
+                    <div class="case-income">月收入：¥8,000-12,000（毕业季）</div>
+                </div>
+                <div class="case-item">
+                    <h4>AI儿童绘本出版</h4>
+                    <p>全职妈妈小张，用AI写故事+画图，Amazon KDP自助出版，被动收入。</p>
+                    <div class="case-income">月收入：¥1,800-2,200（被动）</div>
+                </div>
+                <div class="case-item">
+                    <h4>AI简历优化服务</h4>
+                    <p>HR从业者小陈，用ChatGPT优化简历，BOSS直聘引流，面试辅导增值。</p>
+                    <div class="case-income">月收入：¥3,000-5,000</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>用户真实反馈</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"看了AI头像生成的案例，当天就注册了Midjourney，第三天就接到了第一单，现在每月稳定收入2000+。"</p>
+                    <div class="testimonial-author">— 小李，设计师</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"论文降重的案例太及时了！正好赶上毕业季，一个月赚了8000多，比实习工资还高。"</p>
+                    <div class="testimonial-author">— 小王，大学生</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"作为全职妈妈，一直想找个能在家做的副业。AI绘本的案例让我找到了方向，现在每月有2000被动收入。"</p>
+                    <div class="testimonial-author">— 小张，全职妈妈</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>常见问题</h2>
+            <div class="faq-item">
+                <h4>Q: 需要编程基础吗？</h4>
+                <p>A: 不需要。案例涵盖各种难度，从完全零门槛到需要简单技能，你可以根据自己的情况选择。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: 多久能看到收入？</h4>
+                <p>A: 根据案例不同，快则3天，慢则1个月。每个案例都有"立即行动"清单，按步骤执行即可。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: 购买后可以退款吗？</h4>
+                <p>A: 可以。7天无理由退款，不满意全额退，没有任何风险。</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: 内容会更新吗？</h4>
+                <p>A: 会。每周更新1-2个新案例，购买后永久免费更新。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <div class="container" style="padding: 60px 20px;">
+        <div class="pricing">
+            <h2 style="margin-bottom: 20px;">开始你的一人公司之旅</h2>
+            <div class="price">
+                ¥99
+                <span class="price-original">￥299</span>
+            </div>
+            <p class="price-note">限时特惠，即将涨价至￥199</p>
+            <a href="#buy" class="btn-buy">立即购买</a>
+            <p class="guarantee">✓ 7天无理由退款 ✓ 永久更新 ✓ 专属社群</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">联系方式</a>
+                <a href="#">隐私政策</a>
+                <a href="#">服务条款</a>
+            </div>
+            <p>&copy; 2026 一人公司指南. All rights reserved.</p>
+            <p class="disclaimer">本网站提供的案例仅供参考，实际收入因人而异。我们不对任何投资或商业决策承担责任。</p>
+        </div>
+    </footer>
+</body>
+</html>
